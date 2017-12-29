@@ -1,0 +1,17 @@
+<div>
+	{{#await promise}}
+		<p>Waiting</p>
+	{{then result}}
+		<p>Result</p>
+	{{catch error}}
+		<p>Error {{error}}</p>
+	{{/await}}
+</div>
+
+<script>
+export default {
+	data(){
+		return  { promise: new Promise(r => setTimeout(r, 100)) }
+	}
+}
+</script>
